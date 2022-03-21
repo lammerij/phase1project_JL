@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Job Tracker</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="center-align" id="job-header">
+      <img
+        src="file:///Users/jlammering/Downloads/YsmrDHheGn8v83T-Magnifying-Glass-PNG-Photo-Image.png"
+        alt="job-header"
+      />
+      <h1>Job Tracker!</h1>
+    </div>
+
+    <div class="container">
+      <form class="add-job-form">
+        <h3>Add Job!</h3>
+
+        <input
+          type="text"
+          name="name"
+          value=""
+          placeholder="Enter Job Name..."
+          class="input-text"
+        />
+        <br />
+        
+        <input
+        type="text"
+        name="image"
+        value=""
+        placeholder="Enter Job description..."
+        class="input-text"
+        />
+
+        <input
+          type="submit"
+          name="submit"
+          value="Create Job"
+          class="submit"
+        />
+      </form>
+    </div>
+    <p style="text-align:center">
+      Track Your Jobs! <button id="new-job-btn">Add Job!</button>
+      <button id="new-job-btn">Job List!</button>
+    </p>
+
+    <div id="job-collection"></div>
+    <script src="javascripts/index.js"></script>
+  </body>
+</html>

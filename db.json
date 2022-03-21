@@ -1,0 +1,16 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "name": "HR Recruitement Assistant",
+      "description": "Provides clerical support to the Human Resources, primarily supporting the Recruitment Function, and HR Operations.",
+      "applied": 1
+    },
+    {
+      "id": 2,
+      "name": "Administrative Assistant",
+      "description": "Seeking an administrative assistant to manage and execute administrative, project and senior-level legal support while exercising a high level of professionalism, discretion, attention to detail and responsiveness",
+      "applied": 0
+    }
+  ]
+}
