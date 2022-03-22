@@ -17,7 +17,7 @@ body {
     width: auto;
   }
   
-  #toy-collection {
+  #job-collection {
     margin: 2rem;
   }
   
@@ -65,7 +65,7 @@ body {
     opacity: .8;
   }
   
-  .add-toy-form {
+  .add-job-form {
     width: 80%
   }
   
@@ -97,4 +97,8 @@ body {
     font-family: monospace;
     margin: 3px;
   }
+
+
+
+
   
