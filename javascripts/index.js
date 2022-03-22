@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getData();
   postData();
   jobListing();
+  homeButton()
   const addBtn = document.querySelector("#new-job-btn");
   const jobFormContainer = document.querySelector(".container");
   addBtn.addEventListener("click", () => {
@@ -89,20 +90,21 @@ function renderJobs(arrayOfJobs) {
       // inform back-end with PATCH, applied = 1
       // remove clicked card from DOM
       const collection = document.getElementById("job-list");
-      const item = document.createElement("div");
+      const itemTwo = document.createElement("div");
       const header = document.createElement("h2");
       const jd = document.createElement("h3");
       const button = document.createElement("button");
-      item.className = "card";
-      collection.appendChild(item);
+      itemTwo.className = "card";
+      collection.appendChild(itemTwo);
       header.innerHTML = job.name;
-      item.appendChild(header);
+      itemTwo.appendChild(header);
       jd.innerHTML = job.description;
-      item.appendChild(jd);
+      itemTwo.appendChild(jd);
       button.className = "like-btn";
       button.innerText = "Applied";
       button.setAttribute("id", job.id);
-      item.appendChild(button);
+      itemTwo.appendChild(button);
+      item.remove();
     });
   });
 }
@@ -115,20 +117,21 @@ function jobListing() {
   const jobDiv = document.getElementById("job-collection");
   // console.log(jobList);
   listBtn.addEventListener("click", () => {
-    // wipe the page
-    // filter through jobs list for applied = 1
-    // renderJobs(filteredJobs)
-    listJob = !listJob;
-    if (listJob) {
-      jobList.style.display = "block";
-      jobDiv.style.display = "none";
-    } else {
-      jobDiv.style.display = "block";
-      jobList.style.display = "none";
-    }
+    jobDiv.style.display = "none";
+    jobList.style.display = "block";
   });
 }
 
+function homeButton() {
+  const home = document.getElementById("home-btn");
+  const jobList = document.getElementById("job-list");
+  const jobDiv = document.getElementById("job-collection");
+  home.addEventListener("click", () => {
+    console.log(home);
+    jobDiv.style.display = "block";
+    jobList.style.display = "none";
+  });
+}
 // function jobApplied() {
 //   const applied = document.getElementsByClassName("like-btn");
 //   console.log(applied);
