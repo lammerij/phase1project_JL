@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       jobFormContainer.style.display = "none";
     }
-    
   });
 });
 
@@ -27,7 +26,7 @@ function getData() {
     .then((res) => res.json())
     .then((data) => {
       // filter data for applied = 0
-      renderJobs(data)
+      renderJobs(data);
     });
 }
 
@@ -51,20 +50,20 @@ function postData() {
   });
 }
 
-function patchApplied() {
-  fetch("http://localhost:3000/jobs", {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      applied: newNumberOfApplied,
-    }),
-  })
-    .then((res) => res.json())
-    .then((data) => (data));
-}
+// function patchApplied() {
+//   fetch("http://localhost:3000/jobs", {
+//     method: "PATCH",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json",
+//     },
+//     body: JSON.stringify({
+//       applied: newNumberOfApplied,
+//     }
+//     .then((res) => res.json())
+//     .then((data) => (data));
+//   });
+// }
 
 // DOM Content //
 
@@ -89,7 +88,7 @@ function renderJobs(arrayOfJobs) {
     button.addEventListener("click", () => {
       // inform back-end with PATCH, applied = 1
       // remove clicked card from DOM
-      const collection = document.getElementById("job-collection");
+      const collection = document.getElementById("job-list");
       const item = document.createElement("div");
       const header = document.createElement("h2");
       const jd = document.createElement("h3");
@@ -117,7 +116,7 @@ function jobListing() {
   // console.log(jobList);
   listBtn.addEventListener("click", () => {
     // wipe the page
-    // filter through jobs list for applied = 1 
+    // filter through jobs list for applied = 1
     // renderJobs(filteredJobs)
     listJob = !listJob;
     if (listJob) {
@@ -130,12 +129,9 @@ function jobListing() {
   });
 }
 
-
 // function jobApplied() {
 //   const applied = document.getElementsByClassName("like-btn");
-//   // console.log(applied);
-//   const jobsAppliedArray = [document.getElementsByClassName('like-btn')]
-//   console.log(jobsAppliedArray)
-//   // applied.addEventListener("click", () => {});
+//   console.log(applied);
+//   applied.addEventListener("click", () => {});
 // }
-// jobApplied()
+// jobApplied();
