@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getData();
   postData();
   jobListing();
-  homeButton()
+  homeButton();
   const addBtn = document.querySelector("#new-job-btn");
   const jobFormContainer = document.querySelector(".container");
   addBtn.addEventListener("click", () => {
@@ -33,6 +33,7 @@ function getData() {
 
 function postData() {
   const form = document.querySelector(".add-job-form");
+  const collection = document.getElementById("job-collection");
   // console.log(form);
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -46,25 +47,16 @@ function postData() {
         name: event.target[0].value,
         description: event.target[1].value,
         applied: 0,
-      }),
-    });
+      })
+    })
+    collection.replaceChildren()
+    getData()
+    // .then((response) => response.json())
+    // .then((data) => {
+    //   console.log(data);
+    // })
   });
 }
-
-// function patchApplied() {
-//   fetch("http://localhost:3000/jobs", {
-//     method: "PATCH",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Accept: "application/json",
-//     },
-//     body: JSON.stringify({
-//       applied: newNumberOfApplied,
-//     }
-//     .then((res) => res.json())
-//     .then((data) => (data));
-//   });
-// }
 
 // DOM Content //
 
@@ -132,9 +124,4 @@ function homeButton() {
     jobList.style.display = "none";
   });
 }
-// function jobApplied() {
-//   const applied = document.getElementsByClassName("like-btn");
-//   console.log(applied);
-//   applied.addEventListener("click", () => {});
-// }
-// jobApplied();
+
